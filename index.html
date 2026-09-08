@@ -4,47 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WiPe – IT SERVICES, LDA | Brevemente</title>
-    <style>
-        <!-- Ícone Oficial da WiPe para o Separador do Navegador (Favicon) -->
+    
+    <!-- ÍCONE DA WIPE NO SEPARADOR DO NAVEGADOR (FAVICON) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ff2a5f'/><text x='55%25' y='68%25' font-size='55' font-weight='800' font-family='sans-serif' fill='%23ffffff' text-anchor='middle'>W</text></svg>">
 
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         body, html { width: 100%; height: 100%; overflow: hidden; background-color: #0d0f14; color: #ffffff; display: flex; justify-content: center; align-items: center; }
         
-        /* Fundo com a Animação da Sala de Servidores */
         canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
 
-        /* Contentor Central Seguro (Passa por cima do Canvas) */
         .content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 600px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-        /* LOGÓTIPO REAL EM CSS (Baseado na Imagem Enviada) */
         .logo-container { position: relative; margin-bottom: 2.5rem; padding-right: 40px; }
         .logo-main { font-size: 5rem; font-weight: 800; color: #ffffff; letter-spacing: -3px; line-height: 0.9; position: relative; z-index: 2; }
         .logo-sub { font-size: 1.6rem; font-weight: 700; color: #ffffff; letter-spacing: 1px; margin-top: 5px; text-align: left; position: relative; z-index: 2; }
         .magenta-sphere { position: absolute; width: 120px; height: 120px; background-color: #ff2a5f; border-radius: 50%; top: -20px; right: 10px; z-index: 1; }
 
-        /* Slogan Oficial */
         .slogan-block { border-top: 1px solid rgba(255, 255, 255, 0.3); padding-top: 0.8rem; margin-top: 1rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1.4; }
         .slogan-block div { font-size: 0.75rem; font-weight: 600; color: #cbd5e1; }
 
-        /* Mensagem de Desenvolvimento */
         .status-msg { margin-top: 3.5rem; font-size: 1.4rem; font-weight: 600; color: #ffffff; letter-spacing: 0.5px; animation: pulse 2s infinite ease-in-out; background: rgba(13, 15, 20, 0.7); padding: 0.8rem 2rem; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); }
 
-        /* Rodapé de Copyright */
         footer { position: absolute; bottom: 1.5rem; z-index: 2; font-size: 0.8rem; color: #64748b; letter-spacing: 0.5px; text-align: center; width: 100%; }
 
         @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
         @media (max-width: 480px) { .logo-main { font-size: 3.8rem; } .logo-sub { font-size: 1.2rem; } .magenta-sphere { width: 90px; height: 90px; top: -15px; right: 20px; } .status-msg { font-size: 1.1rem; } }
     </style>
 </head>
-    <!-- Ícone Oficial da WiPe para o Separador do Navegador (Favicon) -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ff2a5f'/><text x='50%25' y='65%25' font-size='55' font-weight='800' font-family='sans-serif' fill='%23ffffff' text-anchor='middle'>W</text></svg>">
-
 <body>
 
-    <!-- Canvas para renderizar a Sala de Servidores Real 3D -->
     <canvas id="serverRoom"></canvas>
 
-    <!-- Conteúdo Informativo Principal -->
     <div class="content">
         <div class="logo-container">
             <div class="logo-main">WiPe</div>
@@ -60,12 +51,10 @@
         <div class="status-msg">Em desenvolvimento abre em breve.</div>
     </div>
 
-    <!-- Rodapé de Proteção de Direitos Reais -->
     <footer>
         &copy; 2026 WiPe – IT SERVICES, LDA. Todos os direitos reservados.
     </footer>
 
-    <!-- Script da Animação Real da Sala de Servidores -->
     <script>
         const canvas = document.getElementById('serverRoom');
         const ctx = canvas.getContext('2d');
@@ -78,7 +67,6 @@
         window.addEventListener('resize', resize);
         resize();
 
-        // Configuração dos Racks de Servidores Digitais em Perspetiva (Efeito 3D)
         const totalRacks = 6;
         const serverRows = 10;
         const racks = [];
@@ -94,14 +82,12 @@
         function drawServerRoom() {
             ctx.clearRect(0, 0, width, height);
 
-            // Fundo escuro tecnológico profundo
             const bgGrad = ctx.createRadialGradient(width/2, height/2, 50, width/2, height/2, Math.max(width, height));
             bgGrad.addColorStop(0, '#111622');
             bgGrad.addColorStop(1, '#07090e');
             ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, width, height);
 
-            // Linhas de perspetiva do corredor central (chão e teto)
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
             ctx.lineWidth = 1;
             const centerX = width / 2;
@@ -114,9 +100,7 @@
                 ctx.stroke();
             }
 
-            // Desenhar os bastidores/racks de servidores
             racks.forEach(rack => {
-                // Cálculo matemático de aproximação 3D
                 const scale = 1 / rack.depth;
                 const rackWidth = 140 * scale;
                 const rackHeight = 280 * scale;
@@ -129,38 +113,31 @@
                 }
                 yPos = centerY - (rackHeight / 2);
 
-                // Desenhar a estrutura do armário se estiver dentro do ecrã
                 if (rack.depth > 0.1 && xPos + rackWidth > 0 && xPos < width) {
-                    // Caixa escura do bastidor
                     ctx.fillStyle = '#05070a';
                     ctx.fillRect(xPos, yPos, rackWidth, rackHeight);
                     ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
                     ctx.strokeRect(xPos, yPos, rackWidth, rackHeight);
 
-                    // Desenhar as gavetas dos servidores individuais
                     const rowH = (rackHeight - 20) / serverRows;
                     for (let j = 0; j < serverRows; j++) {
                         const sY = yPos + 10 + (j * rowH);
                         
-                        // Gaveta metálica interna
                         ctx.fillStyle = '#10141d';
                         ctx.fillRect(xPos + 6, sY, rackWidth - 12, rowH - 4);
                         ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
                         ctx.strokeRect(xPos + 6, sY, rackWidth - 12, rowH - 4);
 
-                        // Alterar o estado dos LEDs de forma aleatória para simular processamento real
                         if (Math.random() > 0.98) {
                             rack.lights[j] = !rack.lights[j];
                         }
 
-                        // Desenhar luzes LED (Cores da Identidade WiPe: Magenta e Azul)
                         const ledRadius = Math.max(1.5, 2.5 * scale);
                         const ledX = xPos + 16;
                         const ledY = sY + (rowH / 2) - 2;
 
                         ctx.beginPath();
                         ctx.arc(ledX, ledY, ledRadius, 0, Math.PI * 2);
-                        // LEDs piscam entre o azul tecnológico e o magenta do logótipo real
                         if (rack.lights[j]) {
                             ctx.fillStyle = j % 3 === 0 ? '#ff2a5f' : '#0284c7';
                             ctx.shadowBlur = 10;
@@ -170,21 +147,23 @@
                             ctx.shadowBlur = 0;
                         }
                         ctx.fill();
-                        ctx.shadowBlur = 0; // Reset das sombras
+                        ctx.shadowBlur = 0;
+                        
+                        // Pequeno detalhe simulando cablagem ou displays digitais
+                        ctx.fillStyle = Math.random() > 0.5 ? '#0284c7' : '#0a324d';
+                        ctx.fillRect(xPos + rackWidth - 25 * scale, sY + rowH/2 - 2, 15 * scale, 3 * scale);
                     }
                 }
 
-                // Fazer os servidores moverem-se para a frente devagar para dar dinamismo
                 rack.depth -= 0.0008;
                 if (rack.depth < 0.15) {
-                    rack.depth = 1.2; // Volta para o fundo do cenário
+                    rack.depth = 1.2;
                 }
             });
 
             requestAnimationFrame(drawServerRoom);
         }
 
-        // Inicializar a execução da sala de computadores virtuais
         drawServerRoom();
     </script>
 </body>
