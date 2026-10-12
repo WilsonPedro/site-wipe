@@ -1,1 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WiPe IT Services - Assistência técnica e soluções empresariais 24/7 em TI e Telecomunicações.">
+  <title>WiPe IT Services, LDA | Tecnologia Simplificada</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #f7255f;
+      --primary-dark: #d8174d;
+      --dark: #101116;
+      --dark-2: #181a21;
+      --text: #252831;
+      --muted: #687080;
+      --light: #f7f8fa;
+      --white: #ffffff;
+      --border: #e9ebef;
+      --shadow: 0 18px 45px rgba(16, 17, 22, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 95px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 1.78rem;
+      font-weight: 800;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.15;
+      color: var(--dark);
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -1px;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.22rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--dark);
+      border-color: #d9dce2;
+      background: var(--white);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Top bar */
+    .topbar {
+      background: var(--dark);
+      color: #dfe2e8;
+      font-size: 0.82rem;
+      padding: 9px 0;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a:hover {
+      color: var(--primary);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      width: 170px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(10, 11, 15, 0.93), rgba(10, 11, 15, 0.64)),
+        url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      color: var(--white);
+    }
+
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #e1e4ea;
+      font-size: 1.14rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero .btn-outline {
+      color: var(--white);
+      background: transparent;
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .hero .btn-outline:hover {
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      color: var(--primary);
+      background: #fff0f4;
+      font-size: 1.45rem;
+    }
+
+    .soft-section {
+      background: var(--light);
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 440px;
+      border-radius: 42px;
+      background:
+        linear-gradient(135deg, rgba(247, 37, 95, 0.18), rgba(0,0,0,0.2)),
+        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1100&q=85")
+        center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 15px;
+      margin-top: 28px;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .check-list span {
+      color: var(--primary);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 42px;
+    }
+
+    .stat {
+      padding: 27px 18px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--primary);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Service groups */
+    .service-group {
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .service-group h3 {
+      color: var(--primary);
+    }
+
+    .service-group ul {
+      display: grid;
+      gap: 11px;
+      margin-top: 20px;
+      padding-left: 19px;
+      color: var(--muted);
+    }
+
+    .service-group li::marker {
+      color: var(--primary);
+    }
+
+    .service-groups {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* Video */
+    .video-wrapper {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--dark);
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      min-height: 430px;
+      display: block;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      background: linear-gradient(90deg, rgba(10,11,15,.73), rgba(10,11,15,.15));
+    }
+
+    .video-overlay h2,
+    .video-overlay p {
+      color: var(--white);
+    }
+
+    .video-overlay p {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 17px;
+      margin-top: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--dark);
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: var(--muted);
+    }
+
+    .contact-item a:hover {
+      color: var(--primary);
+    }
+
+    form {
+      padding: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--dark);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #dfe2e7;
+      border-radius: 8px;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: 0.2s;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(247, 37, 95, 0.12);
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      color: #116b42;
+      background: #e9f8f0;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      color: #cbd0d9;
+      background: var(--dark);
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 3.2fr 0.8fr 1fr;
+      gap: 50px;
+      padding: 50px 0 45px;
+    }
+
+    .footer-logo {
+      width: 180px;
+      margin-bottom: 20px;
+      filter: brightness(1) invert(0);
+    }
+
+    footer h3 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 13px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      color: #aeb5c1;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .footer-bottom {
+      padding: 22px 0;
+      border-top: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+      font-size: 0.82rem;
+      color: #8e96a4;
+    }
+
+    @media (max-width: 900px) {
+      .cards,
+      .service-groups {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-image {
+        min-height: 330px;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .topbar-content {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .logo {
+        width: 145px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(0,0,0,.08);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 610px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .cards,
+      .service-groups,
+      .stats,
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      form {
+        padding: 23px;
+      }
+
+      .video-wrapper,
+      .video-wrapper video {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-content">
+      <span>HORÁRIO DE COBERTURA (SLA) - Suporte Premium sob contrato: Cobertura 24/7 (24 horas por dia, 7 dias por semana) exclusiva para Incidentes de Prioridade P1 – Crítica.</span>
+     
+    </div>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="#inicio" aria-label="Página inicial">
+        <img src="logo.png" alt="WiPe IT Services, LDA" class="logo">
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#empresa">Quem somos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#seguranca">Segurança</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">Tecnologia simplificada, Sucesso maximizado.</span>
+          <h1>TI Estratégica Para Fazer o Seu Negócio <span>Avançar.</span></h1>
+          <p>
+            Soluções de Infraestrutura, Segurança, Cloud e Suporte Técnico
+            para Empresas que procuram mais Produtividade, Estabilidade e Crescimento.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#contacto">Fale Connosco</a>
+            <a class="btn btn-outline" href="#servicos">Conheça os Serviços</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="empresa">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image" aria-label="Equipa empresarial em reunião"></div>
+
+          <div>
+            <span class="eyebrow">Quem somos</span>
+            <h2>O seu Parceiro Estratégico em Tecnologia.</h2>
+            <p>
+			  Distribuidor de TI de Valor Agregado de Alta Qualidade. Oferecemos aos Clientes a integração das nossas representações 
+			  visando melhorar os processos já existentes. Os profissionais da 
+			  WiPe – IT SERVICES, adicionam valor e know-how aos seus projetos.             
+            </p>
+            <br>
+
+            <ul class="check-list">
+              <li><span>✓</span><p>Atendimento Humanizado e Próximo.</p></li>
+              <li><span>✓</span><p>Infraestruturas Seguras e Estáveis.</p></li>
+              <li><span>✓</span><p>Soluções Ajustadas ao seu Orçamento.</p></li>
+              <li><span>✓</span><p>Foco na Redução de Custos e no Retorno do Investimento.</p></li>
+			  <li><span>✓</span><p>Uma Equipa Técnica Especializada e Certificada Pelos Nossos Parceiros Tecnológicos.</p></li>
+			  <li><span>✓</span><p>Um Departamento Comercial Certificado para a Avaliação das Necessidades e Definição da Solução.</p></li>
+			  <li><span>✓</span><p>Apoio Pós-Venda com Capacidade e Eficácia na Implementação, Formação, Configuração e Suporte às Soluções Fornecidas.</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>10+</strong>
+            <span>Anos de Experiência</span>
+          </div>
+          <div class="stat">
+            <strong>250+</strong>
+            <span>Clientes Atendidos</span>
+          </div>
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Monitoramento Disponível</span>
+          </div>
+          <div class="stat">
+            <strong>98%</strong>
+            <span>Clientes Satisfeitos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow">Os nossos valores</span>
+          <h2>Princípios que Orientam o Nosso Trabalho.</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">★</div>
+            <h3>Excelência</h3>
+            <p>Entregas Com o Mais Alto Padrão de Qualidade.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◷</div>
+            <h3>Disponibilidade</h3>
+            <p>Prontidão Total Para Apoiar o Cliente.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3>Inovação</h3>
+            <p>Soluções Modernas Para Desafios Reais de Mercado.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">✓</div>
+            <h3>Transparência</h3>
+            <p>Relações Comerciais Claras e Exatas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow">Soluções e serviços</span>
+          <h2>Uma Operação de TI Mais Segura, Estável e Eficiente.</h2>
+          <p>
+            Operamos com metodologias baseadas nas melhores práticas de mercado,
+            incluindo ITIL, para garantir máxima eficiência e disponibilidade.
+          </p>
+        </div>
+
+        <div class="service-groups">
+          <article class="service-group">
+            <h3>Serviços de Base</h3>
+            <p>O que o Seu Negócio Precisa Para Funcionar.</p>
+            <ul>
+              <li>Cabeamento Estruturado e Redes</li>
+              <li>Wi-Fi Corporativo</li>
+              <li>Instalação de Servidores</li>
+              <li>Montagem de Postos de Trabalho</li>
+              <li>Outsourcing e Service Desk</li>
+            </ul>
+          </article>
+
+          <article class="service-group">
+            <h3>Serviços de Prevenção</h3>
+            <p>Garantia de Estabilidade e Proteção Total.</p>
+            <ul>
+              <li>Monitorização de Redes</li>
+              <li>Firewall Corporativo</li>
+              <li>Antivírus Empresarial</li>
+              <li>Backup e Recuperação</li>
+              <li>Adequação LGPD / RGPD</li>
+            </ul>
+          </article>
+
+          <article class="service-group">
+            <h3>Serviços de Evolução</h3>
+            <p>Valor Estratégico, Inovação e Nuvem.</p>
+            <ul>
+              <li>Migração para AWS e Azure</li>
+              <li>Organização de Data Centers</li>
+              <li>Locação de Infraestrutura</li>
+              <li>TI gerida — MSP</li>
+              <li>Software à Medida</li>
+			  
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="seguranca">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow">Tecnologia Sob Controlo</span>
+          <h2>Serviços Pensados Para Proteger e Acelerar o Seu Negócio.</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">⚙</div>
+            <h3>Suporte Técnico</h3>
+            <p>
+              Atendimento Remoto e Presencial Para Resolver Problemas Rapidamente
+              e Reduzir Paragens.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🔒</div>
+            <h3>Segurança da Informação</h3>
+            <p>
+              Proteção de Dados, Backup, Antivírus e Políticas de Segurança.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">☁</div>
+            <h3>Cloud e Infraestrutura</h3>
+            <p>
+              Servidores, Redes, Cloud e Ambientes de Alta Disponibilidade.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="video-wrapper">
+          <!-- Vídeo ilustrativo de uma server room -->
+          <video autoplay muted loop playsinline poster="">
+            <source src="videos/server-room.mp4" type="video/mp4">
+            O seu navegador não suporta vídeo HTML5.
+          </video>
+
+          <div class="video-overlay">
+            <div>
+              <span class="eyebrow">Infraestrutura preparada</span>
+              <h2>Servidores, Redes e Tecnologia Sempre Disponíveis.</h2>
+              <p>
+                Monitorização, Segurança e Suporte Para Manter a Sua Operação
+                Funcionando Sem Interrupções. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="contacto">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">Fale Connosco</span>
+            <h2>Vamos Tornar a Sua Tecnologia Mais Simples?</h2>
+            <p>
+              Fale com a nossa equipa para solicitar uma proposta, suporte técnico
+              ou aconselhamento sobre equipamentos.
+            </p>
+
+            <div class="contact-info">
+              <div class="contact-item">
+                <span>✉️</span>
+                <div>
+                  <strong>E-mail</strong>
+                  <a href="mailto:comercial@wipe-itservices.com">
+                    comercial@wipe-itservices.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>📞</span>
+                <div>
+                  <strong>Telefone</strong>
+                  <a href="tel:+244935569644">+244 935 569 644</a><br>
+                  <a href="tel:+244923706076">+244 923 706 076</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>📍</span>
+                <div>
+                  <strong>Luanda</strong>
+                  <span>Rua Augusta, Samba, Luanda, Angola</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span>📍</span>
+                <div>
+                  <strong>Lubango</strong>
+                  <span>Bairro do Benfica, Rua 14 de Abril, Lubango, Angola</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form
+  action="https://formsubmit.co/vendas@wipe-itservices.com"
+  method="POST"
+>
+  <h3>Envie uma mensagem</h3>
+
+  <p style="margin-bottom: 24px;">
+    Preencha os seus dados e entraremos em contacto consigo.
+  </p>
+
+  <input type="hidden" name="_subject" value="Novo contacto através do site">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://WilsonPedro.github.io/site-wipe/obrigado.html">
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="nome">Nome *</label>
+      <input type="text" id="nome" name="Nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="empresa">Empresa</label>
+      <input type="text" id="empresa" name="Empresa">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="E-mail" required>
+    </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="Telefone">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="servico">Serviço Pretendido</label>
+    <select id="servico" name="Serviço">
+      <option value="">Selecione uma opção</option>
+      <option>Suporte Técnico</option>
+      <option>Segurança da Informação</option>
+      <option>Cloud e Infraestrutura</option>
+      <option>Redes e Wi-Fi Corporativo</option>
+      <option>Backup e Recuperação</option>
+      <option>TI gerida — MSP</option>
+	  <option>Terceirização de Serviços</option>
+      <option>Outro Assunto</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="mensagem">Mensagem *</label>
+    <textarea id="mensagem" name="Mensagem" required></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit">
+    Enviar mensagem
+  </button>
+</form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-main">
+      <div>
+	  <h3>Horário De Cobertura (SLA)</h3>
+
+		<p>
+            <h3>Suporte Standard:</h3> 
+			Dias úteis, de Segunda a Sexta-feira, das 08:00 às 17:00.
+        </p>
+		
+		
+		<p>
+			 <h3>Suporte Premium:</h3>  
+			 Cobertura 24/7 (24 horas por dia, 7 dias por semana) exclusivo para Incidentes de Prioridade P1 – Crítico (sob contrato).
+		</p>
+      </div>
+
+ <div>
+                    <h3> class="text-white font-bold mb-3">Siga-nos</h3>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-slate-800 hover:bg-blue-600 p-3 rounded-full">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" class="bg-slate-800 hover:bg-pink-600 p-3 rounded-full">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="bg-slate-800 hover:bg-green-600 p-3 rounded-full">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+
+    <!-- Apoio ao cliente -->
+    <div>
+        <h4 class="text-white font-bold text-lg mb-4">
+            Apoio ao cliente
+        </h4>
+
+        <ul class="space-y-3 text-sm">
+            <li>
+                <a href="#contacto" class="hover:text-blue-400 transition">
+                    <i class="fa-solid fa-headset mr-2 text-blue-400"></i>
+                    Fale connosco
+                </a>
+            </li>
+
+            <li>
+                <a href="https://wa.me/244954185657"
+                   target="_blank"
+                   class="hover:text-blue-400 transition">
+                    <i class="fa-brands fa-whatsapp mr-2 text-green-400"></i>
+                    WhatsApp
+                </a>
+            </li>
+
+            <li>
+                <a href="mailto:comercial@wipe-itservices.com"
+                   class="hover:text-blue-400 transition">
+                    <i class="fa-solid fa-envelope mr-2 text-blue-400"></i>
+                    Enviar e-mail
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Centro de ajuda -->
+    <div>
+        <h4 class="text-white font-bold text-lg mb-4">
+            Centro de Ajuda
+        </h4>
+
+        <ul class="space-y-3 text-sm">
+            <li>
+                <a href="#faq" class="hover:text-blue-400 transition">
+                    <i class="fa-solid fa-circle-question mr-2 text-blue-400"></i>
+                    Perguntas frequentes
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto" class="hover:text-blue-400 transition">
+                    <i class="fa-solid fa-comments mr-2 text-blue-400"></i>
+                    Como fazer um pedido
+                </a>
+            </li>
+
+            <li>
+                <a href="#catalogo" class="hover:text-blue-400 transition">
+                    <i class="fa-solid fa-box-open mr-2 text-blue-400"></i>
+                    Consultar produtos
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        © 2026 WiPe - IT SERVICES, LDA. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Menu mobile
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Formulário funcional via e-mail
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const empresa = document.getElementById("empresa").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const telefone = document.getElementById("telefone").value.trim();
+      const servico = document.getElementById("servico").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+
+      const assunto = encodeURIComponent(
+        "Novo contacto pelo site - " + (servico || "Solicitação geral")
+      );
+
+      const corpo = encodeURIComponent(
+        "Nome: " + nome + "\n" +
+        "Empresa: " + (empresa || "Não informado") + "\n" +
+        "E-mail: " + email + "\n" +
+        "Telefone: " + (telefone || "Não informado") + "\n" +
+        "Serviço pretendido: " + (servico || "Não informado") + "\n\n" +
+        "Mensagem:\n" + mensagem
+      );
+
+      formMessage.style.display = "block";
+
+      window.location.href =
+        `mailto:comercial@wipe-itservices.com?subject=${assunto}&body=${corpo}`;
+    });
+  </script>
+
+</body>
+</html>
 
